@@ -64,7 +64,7 @@ angular.module('confusionApp')
 }])
 .controller('DishCommentController', ['$scope', function($scope) {
             
-    $scope.comment = {author:"", rating:5, comment:"", date:Date() };
+    $scope.comment = {author:"", rating:5, comment:"", date:"" };
             
     $scope.submitComment = function () {
                 
@@ -75,10 +75,20 @@ angular.module('confusionApp')
         $scope.dish.comments.push($scope.comment);
                 
         //Step 4: reset your form to pristine
-        $scope.comment = {author:"", rating:5, comment:"", date:Date() };
+        $scope.comment = {author:"", rating:5, comment:"", date:"" };
         $scope.commentForm.$setPristine();        
         //Step 5: reset your JavaScript object that holds your comment
         
     };
 }])
+.controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory,corporateFactory){
+    $scope.dish = menuFactory.getDish(0);
+    $scope.promotion = menuFactory.getPromotion(0);
+    $scope.alberto = corporateFactory.getLeader(3);
+}])
+.controller('AboutController', ['$scope', 'corporateFactory', function($scope,corporateFactory){
+    $scope.corporators = corporateFactory.getLeaders();
+}])
+
+
 ;
