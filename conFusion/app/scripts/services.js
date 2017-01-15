@@ -187,7 +187,7 @@ angular.module('confusionApp')
     
     this.getPromotion = function(index){
         return promotions[index];
-    }
+    };
     
 })
 .factory('corporateFactory', function(){
@@ -227,10 +227,10 @@ angular.module('confusionApp')
 
     corpfac.getLeaders = function(){
         return leaderships;
-    }
+    };
     corpfac.getLeader = function(index){
         return leaderships[index];
-    }
+    };
     
     return corpfac;
 })
