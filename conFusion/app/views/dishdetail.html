@@ -26,11 +26,11 @@
                     </div>
                     <div class="col-xs-5">
                         <p style="padding:5px"></p>
-                        <label style="color:gray;">Sort by: <input ng-model="searchText"></label>
+                        <label style="color:gray;">Sort by: <input ng-model="orderText"></label>
                     </div>
                 </div>
                 <ul class="list-unstyled">
-                    <li ng-repeat="comment in dish.comments | orderBy:searchText">
+                    <li ng-repeat="comment in dish.comments | orderBy:orderText">
                         <blockquote>
                             <h4>{{comment.rating}} Starts</h4>
                             <p>{{comment.comment}}</p>
